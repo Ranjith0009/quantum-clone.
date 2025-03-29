@@ -1,0 +1,106 @@
+/* Full Page Centered Section */
+.contact-section {
+  background: #E5F3FD; 
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  align-items: center; 
+  text-align: center;
+  padding: 20px;
+  width: 100%;
+  overflow-x: hidden; 
+  box-sizing: border-box;
+}
+
+/* Contact Heading - Outside the Box */
+.contact-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #003366;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+/* Contact Box */
+.contact-box {
+  width: 90%;
+  max-width: 1000px;
+  padding: 30px;
+  background: white; 
+  border-radius: 20px; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+/* Hide link appearance but keep functionality */
+.hidden-link {
+  text-decoration: none;  
+  color: inherit;  
+  cursor: pointer; 
+}
+
+/* Prevent page from overflowing */
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Responsive Design */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .contact-title {
+    font-size: 2.2rem;
+  }
+
+  .contact-box {
+    padding: 25px;
+    max-width: 800px;
+  }
+}
+
+/* Mobile (max-width: 767px) */
+@media (max-width: 767px) {
+  .contact-section {
+    padding: 15px;
+  }
+
+  .contact-title {
+    font-size: 2rem;
+    padding: 0 10px;
+  }
+
+  .contact-box {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  /* Ensures better spacing on mobile */
+  .contact-box p {
+    margin: 10px 0;
+  }
+}
+
+/* Large Screens (Above 1440px) */
+@media (min-width: 1440px) {
+  .contact-section {
+    padding: 60px 20px;
+  }
+
+  .contact-title {
+    font-size: 3rem;
+  }
+
+  .contact-box {
+    max-width: 1200px;
+    padding: 40px;
+  }
+}
+
+/* Accessibility Focus */
+.contact-box a:focus {
+  outline: 2px dashed #003366; 
+}

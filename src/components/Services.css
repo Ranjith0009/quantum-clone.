@@ -1,0 +1,128 @@
+.services {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #e5f6ff;
+  overflow-x: hidden; 
+  width: 100%;
+}
+
+.services-title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  max-width: 1200px;
+  margin: auto;
+  overflow-x: hidden;
+}
+
+.service-card {
+  background-color: white;
+  color: black;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: left;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+}
+
+.service-header {
+  background-color: #005a92;
+  color: white;
+  padding: 15px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.service-description {
+  padding: 15px;
+  font-size: 1rem;
+}
+
+/* Responsive Design */
+
+/* Tablet (768px - 1024px) */
+@media (max-width: 1024px) {
+  .services {
+    padding: 40px 15px;
+    overflow-x: hidden;
+  }
+
+  .services-title {
+    font-size: 1.8rem;
+  }
+
+  .services-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjust for smaller screens */
+    gap: 15px;
+  }
+
+  .service-card {
+    font-size: 0.9rem;
+  }
+}
+
+/* Mobile (max-width: 767px) */
+@media (max-width: 767px) {
+  .services {
+    padding: 30px 10px;
+    overflow-x: hidden;
+  }
+
+  .services-title {
+    font-size: 1.6rem;
+  }
+
+  .services-container {
+    grid-template-columns: repeat(auto-fit, minmax(100%, 1fr)); /* Stacks services in one column */
+  }
+
+  .service-card {
+    font-size: 0.85rem;
+  }
+
+  .service-header {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+
+  .service-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Large Screens (Above 1440px) */
+@media (min-width: 1440px) {
+  .services {
+    padding: 60px 20px;
+    overflow-x: hidden;
+  }
+
+  .services-title {
+    font-size: 2.2rem;
+  }
+
+  .services-container {
+    max-width: 1400px;
+  }
+
+  .service-card {
+    font-size: 1rem;
+  }
+}
+
+/* Prevent horizontal scrolling on the whole page */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}

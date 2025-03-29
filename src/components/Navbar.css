@@ -1,0 +1,93 @@
+/* Default Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background-color: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 40px;
+  z-index: 1000;
+  overflow-x: hidden;
+}
+
+/* Desktop Navigation */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+/* Fix unwanted horizontal overflow */
+.nav-links a {
+  color: black;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+/* Hide hamburger icon on larger screens */
+.menu-toggle {
+  display: none;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  /* Hide Desktop Nav Links */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    width: 75%;
+    max-width: 280px;
+    background: white;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    opacity: 0;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  /* Show menu when active */
+  .nav-links.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    display: flex;
+  }
+
+  .nav-links li {
+    padding: 12px;
+  }
+
+  /* Fix menu button size */
+  .menu-toggle {
+    display: block;
+    font-size: 24px;  
+    cursor: pointer;
+    background: none;
+    border: none;
+    outline: none;
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    z-index: 1100;
+  }
+}
+
+/* Prevents horizontal scrolling on the entire page */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
