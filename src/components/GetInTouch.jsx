@@ -9,38 +9,55 @@ const GetInTouch = () => {
     message: "",
   });
 
+  const [status, setStatus] = useState(""); // Success or Error message
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form Submitted:", formData);
-    alert("Your message has been sent!");
-    setFormData({ name: "", email: "", phone: "", message: "" });
+
+    const response = await fetch("https://formspree.io/f/xzzejdbo", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      setStatus("Message sent successfully! ✅");
+      setFormData({ name: "", email: "", phone: "", message: "" });
+    } else {
+      setStatus("Failed to send message. Please try again. ❌");
+    }
   };
 
   return (
     <section className="get-in-touch">
       <div className="get-in-touch-container">
         <h2>Get in Touch Now!</h2>
+        {status && <p className="status-message">{status}</p>} {/* Display status message */}
         <form onSubmit={handleSubmit} className="contact-form">
-          <input
-            type="text"
-            name="name"
-            placeholder="Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
+          <div className="input-group">
+            <input
+              type="text"
+              name="name"
+              placeholder="Name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+            <input
+              type="email"
+              name="email"
+              placeholder="Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
           <input
             type="tel"
             name="phone"

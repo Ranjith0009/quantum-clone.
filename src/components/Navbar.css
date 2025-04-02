@@ -1,93 +1,101 @@
-/* Default Navbar Styles */
 .navbar {
   position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 30px 0;
+  background-color: transparent;
+  z-index: 1000;
+}
+
+.nav-content {
+  position: relative;
   width: 90%;
-  max-width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 20px;
+  padding: 16px 30px;
   background-color: white;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border-radius: 40px;
-  z-index: 1000;
-  overflow-x: hidden;
 }
 
-/* Desktop Navigation */
+.logo {
+  height: 55px;
+  width: auto;
+}
+
 .nav-links {
-  list-style: none;
   display: flex;
-  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 30px;
 }
 
-/* Fix unwanted horizontal overflow */
 .nav-links a {
-  color: black;
+  color: #333;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-  white-space: nowrap;
+  font-weight: 500;
+  font-size: 18px;
+  transition: color 0.3s ease;
 }
 
-/* Hide hamburger icon on larger screens */
+.nav-links a:hover {
+  color: #007bff;
+}
+
 .menu-toggle {
   display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  cursor: pointer;
+  padding: 5px;
+  color: #333;
 }
 
-/* Mobile Responsive */
 @media (max-width: 768px) {
-  /* Hide Desktop Nav Links */
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    width: 75%;
-    max-width: 280px;
-    background: white;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 15px;
-    border-radius: 10px;
-    text-align: center;
-    opacity: 0;
-    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    z-index: 1000;
+  .menu-toggle {
+    display: block;
   }
 
-  /* Show menu when active */
+  .nav-links {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background: white;
+    border-radius: 15px;
+    padding: 10px 0;
+    gap: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+  }
+
   .nav-links.active {
-    transform: translate(-50%, -50%) scale(1);
     opacity: 1;
-    display: flex;
+    visibility: visible;
+    transform: translateY(0);
   }
 
   .nav-links li {
-    padding: 12px;
+    width: 100%;
+    text-align: center;
   }
 
-  /* Fix menu button size */
-  .menu-toggle {
+  .nav-links a {
     display: block;
-    font-size: 24px;  
-    cursor: pointer;
-    background: none;
-    border: none;
-    outline: none;
-    position: absolute;
-    right: 15px;
-    top: 12px;
-    z-index: 1100;
+    padding: 15px 20px;
   }
-}
 
-/* Prevents horizontal scrolling on the entire page */
-html, body {
-  overflow-x: hidden;
-  width: 100%;
+  .nav-links a:hover {
+    background-color: #f8f9fa;
+  }
 }

@@ -10,6 +10,7 @@ const Hero = () => {
       </div>
     </header>
   );
+  
 };
 
 export default Hero;

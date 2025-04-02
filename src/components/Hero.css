@@ -35,8 +35,8 @@
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 100%; /* Ensures content doesn't exceed screen width */
-  overflow-x: hidden; /* Extra safeguard */
+  max-width: 100%; 
+  overflow-x: hidden; 
 }
 
 .hero-content p {
@@ -44,6 +44,7 @@
   font-size: 1.2rem; 
   position: relative; 
   z-index: 2; 
+  margin-top: 10px; 
 }
 
 /* Responsive Design */
@@ -67,27 +68,30 @@
 /* Mobile (max-width: 767px) */
 @media (max-width: 767px) {
   .hero {
-    height: 30vh; 
-    padding: 20px; 
-    align-items: center; 
-    text-align: center; 
-    justify-content: center;
-    overflow-x: hidden; /* Prevents horizontal scrolling on small screens */
+    height: 35vh; 
+    padding: 30px;
+    align-items: flex-end; 
+    justify-content: flex-start; 
+    text-align: left; 
+    padding-left: 20px; 
+    background-attachment: scroll; 
   }
 
   .hero h1 {
     font-size: 2rem; 
+    margin-bottom: 10px; 
   }
 
   .hero-content p {
     font-size: 1rem;
+    margin-top: 0; 
   }
 }
 
 /* Large Screens (Above 1440px) */
 @media (min-width: 1440px) {
   .hero {
-    height: 50vh; /* Slightly larger for bigger screens */
+    height: 50vh; 
   }
 
   .hero h1 {

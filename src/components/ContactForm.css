@@ -1,13 +1,12 @@
 /* Full Page Centered Section */
 .contact-section {
   background: #E5F3FD; 
-  min-height: 100vh; 
   display: flex;
   flex-direction: column;
-  justify-content: center; 
+  justify-content: flex-start; 
   align-items: center; 
   text-align: center;
-  padding: 20px;
+  padding: 40px 20px; 
   width: 100%;
   overflow-x: hidden; 
   box-sizing: border-box;
@@ -15,9 +14,9 @@
 
 /* Contact Heading - Outside the Box */
 .contact-title {
-  font-size: 2.5rem;
+  font-size: 2.9em; 
   font-weight: bold;
-  color: #003366;
+  color: black;
   margin-bottom: 20px;
   padding: 0 20px;
 }
@@ -26,11 +25,27 @@
 .contact-box {
   width: 90%;
   max-width: 1000px;
-  padding: 30px;
+  padding: 20px; 
   background: white; 
   border-radius: 20px; 
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   box-sizing: border-box;
+  font-size: 1.2rem; 
+  line-height: 1.6;
+}
+
+/* Increase text size inside the contact box */
+.contact-box p {
+  font-size: 1.2rem; 
+}
+
+/* Remove highlighting for contact details */
+.contact-box a {
+  font-size: 1.2rem; 
+  font-weight: normal; 
+  text-decoration: none; 
+  color: inherit; 
+  cursor: pointer;
 }
 
 /* Hide link appearance but keep functionality */
@@ -53,7 +68,7 @@ html, body {
 /* Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
   .contact-title {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
   }
 
   .contact-box {
@@ -69,13 +84,14 @@ html, body {
   }
 
   .contact-title {
-    font-size: 2rem;
+    font-size: 2.2rem;
     padding: 0 10px;
   }
 
   .contact-box {
     padding: 20px;
     max-width: 90%;
+    font-size: 1.1rem;
   }
 
   /* Ensures better spacing on mobile */
@@ -97,6 +113,7 @@ html, body {
   .contact-box {
     max-width: 1200px;
     padding: 40px;
+    font-size: 1.3rem; 
   }
 }
 

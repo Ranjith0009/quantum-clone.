@@ -1,25 +1,47 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import logo from "../assets/images/Vector.svg";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
+  // Close menu when clicking outside
+  useEffect(() => {
+    const closeMenu = (e) => {
+      if (menuOpen && !e.target.closest('.navbar')) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener('click', closeMenu);
+    return () => document.removeEventListener('click', closeMenu);
+  }, [menuOpen]);
+
+  const handleLinkClick = () => {
+    setMenuOpen(false);
+  };
+
   return (
     <nav className="navbar">
-      <img src={logo} alt="Quantum Smart Hub Logo" className="logo" />
+      <div className="nav-content">
+        <img src={logo} alt="Quantum Smart Hub Logo" className="logo" />
 
-      {/* Hamburger Icon (Only on Mobile) */}
-      <button className="menu-toggle" onClick={() => setMenuOpen(!menuOpen)}>
-        ☰
-      </button>
+        <button
+          className="menu-toggle"
+          onClick={(e) => {
+            e.stopPropagation();
+            setMenuOpen(!menuOpen);
+          }}
+          aria-label="Toggle Menu"
+        >
+          {menuOpen ? '×' : '☰'}
+        </button>
 
-      {/* Hidden Navigation Menu */}
-      <ul className={`nav-links ${menuOpen ? "active" : ""}`} onClick={() => setMenuOpen(false)}>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact Us</a></li>
-      </ul>
+        <ul className={`nav-links ${menuOpen ? "active" : ""}`}>
+          <li><a href="#about" onClick={handleLinkClick}>About</a></li>
+          <li><a href="#services" onClick={handleLinkClick}>Services</a></li>
+          <li><a href="#contact" onClick={handleLinkClick}>Contact Us</a></li>
+        </ul>
+      </div>
     </nav>
   );
 };

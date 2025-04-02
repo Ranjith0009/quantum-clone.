@@ -1,52 +1,60 @@
-.about { 
-  width: 100%;
-  min-height: 80vh;
+<<<<<<< HEAD
+/* Your local changes */
+=======
+/* Changes from GitHub */
+>>>>>>> origin/main
+*,
+*::before,
+*::after {
   margin: 0;
-  padding: 30px 20px;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.about {
+  width: 100%;
+  min-height: 50vh; 
+  margin-top: 50px;  
   background: #E5F3FD;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  overflow-x: hidden; 
+  align-items: center;
+  overflow-x: hidden;
+  padding: 100px 20px; 
 }
 
-/* Heading Styling */
 .about h2 {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #003366;
-  text-align: center; 
-  margin-bottom: 20px;
+  color: black;
+  text-align: center;
+  margin-bottom: 30px; 
   width: 100%;
-  padding-left: 0; 
-  transform: none; 
-  white-space: normal;
+  max-width: 800px;
 }
 
-/* Paragraph Styling */
 .about p {
   font-size: 1.2rem;
   color: #333;
   line-height: 1.8;
   text-align: justify;
   max-width: 800px;
-  overflow-x: hidden;
+  margin-bottom: 20px; 
 }
 
-/* Responsive Design */
+.about p:last-child {
+  margin-bottom: 0;  
+}
 
-/* Tablet (768px - 1024px) */
 @media (max-width: 1024px) {
   .about {
-    min-height: 70vh;
-    padding: 20px;
+    padding: 80px 20px;
   }
 
   .about h2 {
     font-size: 2rem;
-    padding-left: 0;
-    text-align: center;
+    margin-bottom: 25px;
   }
 
   .about p {
@@ -55,48 +63,36 @@
   }
 }
 
-/* Mobile (max-width: 767px) */
 @media (max-width: 767px) {
   .about {
-    min-height: auto;
-    padding: 15px;
-    align-items: center;
-    overflow-x: hidden;
+    padding: 60px 15px;
   }
 
   .about h2 {
     font-size: 1.8rem;
-    padding-left: 0; 
-    text-align: center;
+    margin-bottom: 20px;
   }
 
   .about p {
     font-size: 1rem;
-    max-width: 90%;
-    text-align: center;
+    max-width: 100%;
+    text-align: left;  
+    padding: 0 10px;
   }
 }
 
-/* Large Screens (Above 1440px) */
 @media (min-width: 1440px) {
   .about {
-    min-height: 85vh;
+    padding: 120px 20px;
   }
 
   .about h2 {
     font-size: 3rem;
-    text-align: center;
-    padding-left: 0;
+    margin-bottom: 40px;
   }
 
   .about p {
     font-size: 1.3rem;
     max-width: 900px;
   }
-}
-
-/* Prevent horizontal scrolling on the whole page */
-html, body {
-  overflow-x: hidden;
-  width: 100%;
 }
